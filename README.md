@@ -8,7 +8,10 @@
 	It creates new objects in the Food class. The object being animal are created. 
  	They go by the names "hare" and "tortoise".
 	The setDaemon() method  is used to mark the thread for "hare". 
- 	By setting it false,it will ensure that the program will continue running until both the Hare and the Tortoise have completed their race.
+ 	By setting the setDaemon() method to false,it will ensure that the program will 
+  	continue running until both the Hare and the Tortoise have completed their race.
+
+   
 	When running the main class, the output would display:
 	Tortoise starts eating.
 	Tortoise is done eating.
