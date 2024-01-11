@@ -1,0 +1,13 @@
+/****************************************SC***************************************************
+ * Name: Suresh Chitkara *
+ * Course:202410 Object Oriented Programming COP-3330C-14834 *
+ * Date: 9/21/2023 *
+ * Description: This is the Food class, it would simulate the animal eating.  When the animal is "eating", the thread will be asleep.
+ *****************************************SC****************************************************/
+class Food { // SC Introduction to Food class.
+    public synchronized void eat(String animalName, int eatTime) throws InterruptedException { // SC Defines a synchronized method named eat in Food class.
+        System.out.println(animalName + " starts eating."); // SC Line displays that animal starts eating.
+        Thread.sleep(eatTime); // SC The thread will remain inactive for this duration.
+        System.out.println(animalName + " is done eating."); // SC Animal will then resume the race, thread continues to display.
+    }
+}
