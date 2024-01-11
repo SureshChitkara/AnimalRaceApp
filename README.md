@@ -5,9 +5,14 @@
  
 	This project simulates a race between the Hare and the Tortoise. 
  	It shows threads that print to the user stating the animal's name and current position. 
-	It creates new objects in the Food class. The object being animal are created. 
+	It creates new objects in the Animal class. The object being animal are created. 
  	They go by the names "hare" and "tortoise".
-	The setDaemon() method  is used to mark the thread for "hare". 
+  
+  	The thread would also display that the animal starts eating.
+   	Which means the animal remains inactive.
+   	Animal will then resume the race, thread continues to display.
+    
+	The setDaemon() method  is used to mark the thread for both animals. 
  	By setting the setDaemon() method to false,it will ensure that the program will 
   	continue running until both the Hare and the Tortoise have completed their race.
 
