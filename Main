@@ -1,0 +1,23 @@
+/****************************************SC***************************************************
+ * Name: Suresh Chitkara *
+ * Course:202410 Object Oriented Programming COP-3330C-14834 *
+ * Date: 9/21/2023 *
+ * Description: This is the Main class, this class simulates a race between the Hare and the Tortoise. It shows threads that print to the user stating the animal's name and current position.
+ *****************************************SC****************************************************/
+public class Main { // SC Introduction to main class.
+    public static void main(String[] args) { // SC The main method stores the string
+
+        Food sharedFood = new Food(); // SC Create new object for Food.
+        Animal hare = new Animal("Hare", 10, 100, sharedFood); // SC Create new animal object that being "hare".
+        Animal tortoise = new Animal("Tortoise", 5, 200, sharedFood); // SC Create new animal object that being "tortoise".
+
+        Thread hareThread = new Thread(hare); // SC Create thread for "hare".
+        Thread tortoiseThread = new Thread(tortoise); // SC Create thread for "tortoise".
+
+        hareThread.setDaemon(false); // SC The setDaemon() method  is used to mark the thread for "hare". By setting it false,it will ensure that the program will continue running until both the Hare and the Tortoise have completed their race.
+        tortoiseThread.setDaemon(false); // SC The setDaemon() method  is used to mark the thread for "tortoise".
+
+        hareThread.start(); // SC Method is used to start the execution of the thread representing the Hare in the animal race simulation.
+        tortoiseThread.start(); // SC Method is used to start the execution of the thread representing the Tortoise in the animal race simulation.
+    }
+}
