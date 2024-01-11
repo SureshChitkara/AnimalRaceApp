@@ -1,9 +1,14 @@
 	Suresh Chitkara 
 	CEN-3024C
 	Module 1 | Version Control and Introduction to Software Development Assignment
-	This project simulates a race between the Hare and the Tortoise. It shows threads that print to the user stating the animal's name and current position. 
-	It creates new objects in the Food class. The object being animal are created. They go by the names "hare" and "tortoise".
-	The setDaemon() method  is used to mark the thread for "hare". By setting it false,it will ensure that the program will continue running until both the Hare and the Tortoise have completed their race.
+
+ 
+	This project simulates a race between the Hare and the Tortoise. 
+ 	It shows threads that print to the user stating the animal's name and current position. 
+	It creates new objects in the Food class. The object being animal are created. 
+ 	They go by the names "hare" and "tortoise".
+	The setDaemon() method  is used to mark the thread for "hare". 
+ 	By setting it false,it will ensure that the program will continue running until both the Hare and the Tortoise have completed their race.
 	When running the main class, the output would display:
 	Tortoise starts eating.
 	Tortoise is done eating.
