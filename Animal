@@ -1,0 +1,47 @@
+/****************************************SC***************************************************
+ * Name: Suresh Chitkara *
+ * Course:202410 Object Oriented Programming COP-3330C-14834 *
+ * Date: 9/21/2023 *
+ * Description: This is the Animal class, this creates the objects for the animals being the tortoise and the hare. It uses objects such as distance traveled, rest, and food.
+ *****************************************SC****************************************************/
+import java.util.Random; // SC  Import statement in Java, and it's used to include the Random class from the java.util package in the code.
+
+class Animal implements Runnable { // SC Animal class is responsible for simulating the actions of the animals.
+    private String name; // SC Declaring a private instance variable named name within the class.
+    private int position; // SC Declaring a private instance variable named position within the class.
+    private int distanceTraveled; // SC Declaring a private instance variable named distanceTraveled within the class.
+    private int restMax; // SC Declaring a private instance variable named restMax within the class.
+    private static boolean winner = false; // SC Declaring a private boolean static variable named winner within the class.
+    private Food food; // SC Declaring a private instance variable named food within the class.
+
+    public Animal(String name, int distanceTraveled, int restMax, Food food) { // SC Constructor for Animal class.
+        this.name = name; // SC Setter for name.
+        this.distanceTraveled = distanceTraveled; // SC Setter for distanceTraveled.
+        this.restMax = restMax; // SC Setter for restMax.
+        this.position = 0; // SC Setter for position, default value is 0.
+        this.food = food; // SC Setter for food.
+    }
+
+    @Override // SC Indicates that a method in a subclass is intended to override a method in its superclass.
+    public void run() { // SC Method provided as an implementation of the run method from the Runnable interface.
+        Random rand = new Random(); // SC Creates an instance of the Random class and initializes it as rand.
+
+        while (!winner) { // SC this is the while loop.In this loop, the code inside the loop will continue to execute as long as the condition !winner evaluates to true.
+            try { // SC Beginning of a try-catch block.
+                int restTime = rand.nextInt(restMax); // SC Pauses thread at a certain time.
+                Thread.sleep(restTime); // SC An interrupted exception has been thrown.
+
+                food.eat(name, name.equals("Hare") ? 200 : 100); // SC Hare eats longer than Tortoise
+                position += distanceTraveled; // SC This line increments the position variable by the value stored in distanceTraveled.
+                System.out.println(name + " is at position " + position); // SC Animal's current position is displayed.
+
+                if (position >= 120) { // SC If the current position of the animal in the race is greater than or equal to 120
+                    winner = true; // SC Animal is declared winner.
+                    System.out.println(name + " wins the race!"); // SC Name of animal is displayed as winner.
+                }
+            } catch (InterruptedException e) { // SC Catch block to handle exception.
+                e.printStackTrace(); // SC  Information is printed about the exception.
+            }
+        }
+    }
+}
